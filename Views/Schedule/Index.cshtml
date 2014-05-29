@@ -1,0 +1,66 @@
+﻿@model List<ShipSoftball.Models.Schedule>
+@{
+    ViewBag.Title = "Schedule";
+}
+
+<h2>Schedule</h2>
+<a href="/Files/schedule.xls">Full Excel Schedule</a>
+<div class="alert alert-info"><label for="search">Search (ex: Grip it returns that schedule. 5/4 returns May 4th games):</label><input name="search" id="search" type="text"></div>
+<table id="myTable" class="rightBorder" style="width: 100%; border: 1px dashed black;">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Field</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{var x = "";}
+        @foreach (var item in Model)
+        {
+            if (x.Equals("") || (x.Equals(@item.ScheduleDate) && !@item.ScheduleTime.ToString("h:mm tt").Equals("12:00 AM")))
+            {
+                <tr class="trSearch">
+                    <td>@item.ScheduleDate</td>
+                    <td>@item.ScheduleTime.ToString("h:mm tt")</td>
+                    <td>@item.HomeTeam</td>
+                    <td>@item.AwayTeam</td>
+                    <td>@item.Field</td>
+                </tr>
+
+            }
+            else
+            {
+                if (@item.ScheduleTime.ToString("h:mm tt").Equals("12:00 AM"))
+                {
+                    <tr class="trSearch"><td colspan="5" style="background-color: black;">&nbsp</td></tr>
+                }
+            }
+            x = @item.ScheduleDate;
+
+        }
+    </tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        var keypress = 0;
+        //$('.alert-message').tooltip();
+
+        //AJAX search added thanks to MiracleManS
+        $("#search").keyup(function () {
+            var inpVal = $(this).val().toLowerCase();
+            if (keypress === 0) {
+                $(".trSearch").hide();
+            }
+            $(".trSearch").each(function () {
+                if ($(this).text().toLowerCase().indexOf(inpVal) >= 0) {
+                    $(this).show();
+                }
+            });
+        });
+    });
+
+</script>
+
