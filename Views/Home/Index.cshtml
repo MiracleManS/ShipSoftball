@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<ShipSoftball.Models.Schedule>
+@{
     ViewBag.Title = "Shippensburg Rec Softball League";
 }
 
@@ -41,55 +42,74 @@
         </tbody>
     </table>
 </div>
-
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 alert alert-info">
         <h2>Upcoming Games</h2>
         <table class="rightBorder" style="width: 100%; border: 1px dashed black;">
             <tbody>
                 <tr style="border-bottom: 1px solid;">
-                    <td>Date</td>
-                    <td>Time</td>
-                    <td>Home Team</td>
-                    <td>Away Team</td>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Home Team</th>
+                    <th>Away Team</th>
+                    <th>Field</th>
                 </tr>
                 <tr class="trSearch"><td colspan="5" style="background-color: black;"></td></tr>
                 <tr class="trSearch">
-                    <td>Sun 5/18/2014</td>
+
+                    <td>Sun 6/1/2014</td>
                     <td>3:00 PM</td>
                     <td>Challengers</td>
-                    <td>No One Fights Alone</td>
-                </tr>
-                <tr class="trSearch">
-                    <td>Sun 5/18/2014</td>
-                    <td>3:00 PM</td>
-                    <td>Probation</td>
-                    <td>Grip it</td>
-                </tr>
-                <tr class="trSearch">
-                    <td>Sun 5/18/2014</td>
-                    <td>4:30 PM</td>
                     <td>Hard Drivers</td>
-                    <td>SUPD</td>
+                    <td>Field 1</td>
+
                 </tr>
                 <tr class="trSearch">
-                    <td>Sun 5/18/2014</td>
-                    <td>4:30 PM</td>
-                    <td>Ship Fire</td>
-                    <td>Probation</td>
-                </tr>
-                <tr class="trSearch">
-                    <td>Sun 5/18/2014</td>
-                    <td>6:00 PM</td>
-                    <td>Grip it</td>
+
+                    <td>Sun 6/1/2014</td>
+                    <td>3:00 PM</td>
                     <td>No One Fights Alone</td>
+                    <td>SUPD</td>
+                    <td>Field 2 (Wires)</td>
+
                 </tr>
                 <tr class="trSearch">
-                    <td>Sun 5/18/2014</td>
+
+                    <td>Sun 6/1/2014</td>
+                    <td>4:30 PM</td>
+                    <td>Grip it</td>
+                    <td>Ship Fire</td>
+                    <td>Field 1</td>
+
+                </tr>
+                <tr class="trSearch">
+
+                    <td>Sun 6/1/2014</td>
+                    <td>4:30 PM</td>
+                    <td>Probation</td>
+                    <td>Challengers</td>
+                    <td>Field 2 (Wires)</td>
+
+                </tr>
+                <tr class="trSearch">
+
+                    <td>Sun 6/1/2014</td>
                     <td>6:00 PM</td>
                     <td>SUPD</td>
-                    <td>Challengers</td>
+                    <td>Ship Fire</td>
+                    <td>Field 1</td>
+
                 </tr>
+                <tr>
+
+                    <td>Sun 6/1/2014</td>
+                    <td>6:00 PM</td>
+                    <td>Hard Drivers</td>
+                    <td>No One Fights Alone</td>
+                    <td>Field 2 (Wires)</td>
+
+                </tr>
+
             </tbody>
         </table>
     </div>

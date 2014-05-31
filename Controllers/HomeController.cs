@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ShipSoftball.Models;
 
 namespace ShipSoftball.Controllers
 {
@@ -10,6 +11,7 @@ namespace ShipSoftball.Controllers
     {
         public ActionResult Index()
         {
+            List<Schedule> sched = Schedule.GetScheduleByDate(DateTime.Today);
             return View();
         }
 
